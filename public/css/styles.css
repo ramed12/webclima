@@ -1,0 +1,185 @@
+body {
+    color: #333333;
+    font-family: arial;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /*set height of all body's content to max browser height*/
+}
+
+
+.main-content {
+    flex-grow: 1; /*now that min-height is 100vh, we can let content grow all the
+    way to the bottom */
+}
+
+footer {
+    color: #888888;
+    border-top: 1px solid #EEEEEE;
+    margin-top: 16px;
+    padding: 16px 0;
+}
+
+header {
+    margin: 16px 0 48px 0;
+}
+
+h1 {
+    font-size: 64px;
+    margin-bottom: 16px;
+}
+
+header a {
+    color: #888888;
+    margin-right: 16px;
+    text-decoration: none;
+}
+
+.portrait {
+    height: 250px;
+}
+
+#loading {
+    display: none;
+    
+}
+
+input {
+    border: 1px solid #CCCCCC;
+    padding: 8px;
+}
+
+button {
+    cursor: pointer;
+    border: 1px solid #888888;
+    background: #888888;
+    color: white;
+    padding: 8px;
+}
+
+.week-div {
+    margin-top: 20px;
+    flex-direction: row;
+    justify-content: space-between;
+    display: flex;
+}
+
+.week-div > div {
+    border: 2px solid #CCCCCC;
+    padding: 0.5%;
+    border-bottom: 5px solid #888888;
+    border-right: 5px solid #888888;
+    visibility: hidden;
+    width: 12%;
+}
+
+.day-name {
+    font-size: 20px;
+    font-weight:bold;
+}
+
+.temperature p {
+    display: inline-block;
+}
+
+.temperature span {
+    font-weight: bold;
+}
+
+.week-div canvas {
+    width: 90%;
+}
+
+.current-day-div {
+    display: flex;
+    justify-content: center;
+}
+
+#today {
+    visibility: hidden;
+    border: 2px solid #63A3D4;
+    border-bottom: 5px solid #63A3D4;
+    border-right: 5px solid #63A3D4;
+    margin-top: 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 70%;
+    line-height: 8px;
+}
+
+#today-name {
+    font-size: 40px;
+}
+
+#today-summary {
+    padding: 0;
+}
+
+.today-extra-info {
+
+}
+
+.today-extra-info div p {
+    display: inline-block;
+    margin-left: 4px;
+}
+.today-extra-info div h3 {
+    display: inline-block;
+}
+
+@media (max-width: 800px) {
+    body {
+        max-width: 100%;
+    }
+
+    .week-div > div {
+        border: none;
+        padding: 0.5%;
+        width: 11%;
+        border-right: 1px solid #888888;
+    }
+
+    .week-div > div:last-child {
+        border-right: none;
+    }
+
+    .week-div canvas {
+        width: 75%;
+    }
+
+    /* .day-name {
+        overflow: hidden;
+        width: 50%;
+
+    } */
+
+    .temperature p {
+        display: none;
+    }
+}
+
+@media (max-width: 600px) {
+    .week-div {
+        flex-direction: column;
+    }
+
+    .week-div > div {
+        width: 100%;
+        height: 50px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        border-bottom: 1px solid #888888;
+    }
+    .week-div canvas {
+        width: 50px;
+        height: 50px;
+    }
+
+    .day-name {
+        overflow: visible;
+        width: 10%;
+    }
+}

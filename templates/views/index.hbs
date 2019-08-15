@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+
+<html>
+
+<head>
+    <title>Clima</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="icon" href="/img/weather-icon.png">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <div class="main-content">
+        {{>header}}
+
+        <p>Obtenha seu tempo aqui!</p>
+        <img id="loading" src="img/loading.gif">
+        <form id="search-form">
+            <input placeholder="Location" value="new york">
+            <button>Buscar</button>
+        </form>
+        <div class="current-day-div">
+            <div id="today">{{>currentday}}</div>
+        </div>
+        <div class="week-div">
+            <div class='day-div' id='Sunday'>{{>day}}</div>
+            <div class='day-div' id='Monday'>{{>day}}</div>
+            <div class='day-div' id='Tuesday'>{{>day}}</div>
+            <div class='day-div' id='Wednesday'>{{>day}}</div>
+            <div class='day-div' id='Thursday'>{{>day}}</div>
+            <div class='day-div' id='Friday'>{{>day}}</div>
+            <div class='day-div' id='Saturday'>{{>day}}</div>
+        </div>
+
+    </div>
+    {{>footer}}
+
+    <script src="js/app.js"></script>
+</body>
+
+</html>
